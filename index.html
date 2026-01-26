@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucent AI | Operational Enlightenment through AI</title>
+    <meta name="description" content="Lucent AI helps companies achieve operational enlightenment through intelligent automation and AI systems that actually work.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Satoshi:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #18181b;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent-gold: #f4c542;
+            --accent-coral: #e07a5f;
+            --accent-gradient: linear-gradient(135deg, #f4c542 0%, #e8a33c 50%, #e07a5f 100%);
+            --border-subtle: rgba(255,255,255,0.06);
+            --border-light: rgba(255,255,255,0.1);
+            --glow-gold: rgba(244, 197, 66, 0.15);
+            --glow-coral: rgba(224, 122, 95, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .serif-italic {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-style: italic;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(10, 10, 11, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-icon {
+            height: 36px;
+            width: 36px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--accent-gradient);
+            color: var(--bg-primary);
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px var(--glow-gold);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--glow-coral) 0%, transparent 70%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--accent-gradient);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            letter-spacing: -0.03em;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-gradient);
+            color: var(--bg-primary);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--glow-gold);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1.2s;
+        }
+
+        .scroll-indicator .line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--text-muted), transparent);
+            animation: scrollPulse 2s ease infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* What We Do Section */
+        .what-we-do {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+            max-width: 800px;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-top: 24px;
+            line-height: 1.7;
+        }
+
+        .what-we-do-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .what-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 48px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .what-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .what-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-4px);
+        }
+
+        .what-card:hover::before {
+            opacity: 1;
+        }
+
+        .what-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .what-card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--bg-primary);
+        }
+
+        .what-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .what-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 48px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(244, 197, 66, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover::after {
+            opacity: 0.5;
+        }
+
+        .service-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 4rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card li {
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--border-light);
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        .process-step-number {
+            width: 72px;
+            height: 72px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .process-step-number {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 30px var(--glow-gold);
+        }
+
+        .process-step h4 {
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .founder-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+
+        .founder-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            color: var(--bg-primary);
+        }
+
+        .founder-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .founder-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .founder-expertise {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .expertise-tag {
+            display: inline-block;
+            background: rgba(244, 197, 66, 0.1);
+            color: var(--accent-gold);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 4px 4px 4px 0;
+        }
+
+        /* Services Page Detail */
+        .services-detail {
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .service-detail-block {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .service-detail-block:last-child {
+            border-bottom: none;
+        }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .service-detail-header h3 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .service-detail-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .service-detail-content h4 {
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            margin-top: 32px;
+        }
+
+        .service-detail-content h4:first-child {
+            margin-top: 0;
+        }
+
+        .service-detail-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .service-detail-content ul {
+            list-style: none;
+        }
+
+        .service-detail-content li {
+            color: var(--text-secondary);
+            padding: 12px 0;
+            padding-left: 24px;
+            position: relative;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .service-detail-content li:last-child {
+            border-bottom: none;
+        }
+
+        .service-detail-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-content p {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+        }
+
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-gold);
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo img {
+            height: 32px;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .what-card {
+                padding: 32px;
+            }
+
+            .service-card {
+                padding: 32px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        /* Page navigation */
+        .page-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 8px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .page-nav-btn {
+            padding: 8px 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .page-nav-btn:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .page-nav-btn.active {
+            background: var(--accent-gradient);
+            color: var(--bg-primary);
+        }
+
+        /* Page sections - hide by default */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad1" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" stop-color="#f4c542"/>
+                            <stop offset="100%" stop-color="#e07a5f"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Pinwheel star shape -->
+                    <g transform="translate(50,50)">
+                        <!-- 6 curved blades radiating from center -->
+                        <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(0)"/>
+                        <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(60)"/>
+                        <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(120)"/>
+                        <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(180)"/>
+                        <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(240)"/>
+                        <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(300)"/>
+                        <!-- Connection dots at blade tips -->
+                        <circle cx="0" cy="-42" r="3.5" fill="url(#logoGrad1)"/>
+                        <circle cx="0" cy="-42" r="1.5" fill="#0a0a0b"/>
+                        <circle cx="36" cy="-21" r="3.5" fill="url(#logoGrad1)" transform="rotate(0)"/>
+                        <circle cx="36" cy="-21" r="1.5" fill="#0a0a0b"/>
+                        <circle cx="36" cy="21" r="3.5" fill="url(#logoGrad1)"/>
+                        <circle cx="36" cy="21" r="1.5" fill="#0a0a0b"/>
+                        <circle cx="0" cy="42" r="3.5" fill="url(#logoGrad1)"/>
+                        <circle cx="0" cy="42" r="1.5" fill="#0a0a0b"/>
+                        <circle cx="-36" cy="21" r="3.5" fill="url(#logoGrad1)"/>
+                        <circle cx="-36" cy="21" r="1.5" fill="#0a0a0b"/>
+                        <circle cx="-36" cy="-21" r="3.5" fill="url(#logoGrad1)"/>
+                        <circle cx="-36" cy="-21" r="1.5" fill="#0a0a0b"/>
+                    </g>
+                </svg>
+                <span class="logo-text">Lucent AI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('process')">Process</a></li>
+            </ul>
+            <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="nav-cta">Book a Call</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="page-home" class="page-section active">
+        
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">AI Automation Agency</div>
+                    <h1>Operational <span class="gradient-text">enlightenment</span> through AI</h1>
+                    <p class="hero-description">We illuminate inefficiencies, reveal hidden potential, and automate the systems holding your business back. Clarity first. Intelligent automation second.</p>
+                    <div class="hero-ctas">
+                        <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
+                            Schedule Consultation
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#" onclick="showPage('services')" class="btn-secondary">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- What We Do -->
+        <section class="what-we-do">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">What We Do</div>
+                    <h2>AI systems that <span class="serif-italic">actually</span> work</h2>
+                    <p>Not another chatbot. Not a generic SaaS integration. We build intelligent systems tailored to how your business operates.</p>
+                </div>
+                <div class="what-we-do-grid">
+                    <div class="what-card reveal">
+                        <div class="what-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                        </div>
+                        <h3>Diagnose</h3>
+                        <p>We map your workflows, identify friction points, and find where AI can create the highest leverage. No assumptions—just clear analysis of what's slowing you down.</p>
+                    </div>
+                    <div class="what-card reveal">
+                        <div class="what-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>Design</h3>
+                        <p>Every solution is architected around your specific context—your tools, your team, your goals. We design systems that integrate seamlessly, not bolt-ons that create more work.</p>
+                    </div>
+                    <div class="what-card reveal">
+                        <div class="what-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                        </div>
+                        <h3>Deploy</h3>
+                        <p>Production-ready implementation with proper testing, monitoring, and documentation. You get systems that work reliably—not demos that break when conditions change.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="services-overview">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Services</div>
+                    <h2>Two ways we help you grow</h2>
+                    <p>Whether you need a high-converting web presence or intelligent automation behind the scenes, we deliver systems that compound over time.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-number">01</div>
+                        <h3>AI Website Generation</h3>
+                        <p>High-performance websites built with AI-accelerated development. Fast turnaround, conversion-optimized, and designed to establish credibility from the first visit.</p>
+                        <ul>
+                            <li>Landing pages & marketing sites</li>
+                            <li>Conversion-optimized design</li>
+                            <li>Rapid iteration & deployment</li>
+                            <li>SEO-ready architecture</li>
+                        </ul>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-number">02</div>
+                        <h3>AI Automation</h3>
+                        <p>Intelligent systems that eliminate repetitive work, connect your tools, and give your team superpowers. From simple workflows to complex multi-agent systems.</p>
+                        <ul>
+                            <li>Workflow automation</li>
+                            <li>Custom AI integrations</li>
+                            <li>Internal copilots & assistants</li>
+                            <li>Data pipeline automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Preview -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Process</div>
+                    <h2>A clear path to results</h2>
+                    <p>No black boxes. No endless discovery phases. We move with intention through a proven process.</p>
+                </div>
+                <div class="process-timeline reveal">
+                    <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <h4>Discover</h4>
+                        <p>Deep-dive into your operations, tools, and goals</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <h4>Design</h4>
+                        <p>Architect solutions tailored to your context</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <h4>Build</h4>
+                        <p>Develop with precision and attention to detail</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">4</div>
+                        <h4>Deploy</h4>
+                        <p>Launch with proper testing and documentation</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">5</div>
+                        <h4>Optimize</h4>
+                        <p>Iterate based on real-world performance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content reveal">
+                    <h2>Ready for <span class="serif-italic">clarity?</span></h2>
+                    <p>We work with a select number of clients to ensure every engagement gets the attention it deserves. Let's see if we're a fit.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
+                            Book Intro Call
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:lucentaiagency@gmail.com">lucentaiagency@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank">Schedule on Calendly</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="page-about" class="page-section">
+        
+        <section class="hero" style="min-height: auto; padding-top: 180px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">About Lucent AI</div>
+                    <h1>Built on real-world <span class="gradient-text">implementation</span></h1>
+                    <p class="hero-description">Lucent was founded on a simple premise: AI should make businesses more effective, not more complicated. We bridge the gap between AI capability and operational reality.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content reveal">
+                        <h2>The philosophy</h2>
+                        <p>Most AI implementations fail not because the technology doesn't work—but because it wasn't designed for the reality of how businesses operate. Teams get excited about AI's potential, invest in tools and experiments, then watch them gather dust.</p>
+                        <p>We take a different approach. Before writing a single line of code, we understand your workflows, constraints, and goals. Then we design solutions that fit your context—not generic templates that require you to change how you work.</p>
+                        <p>The result: AI systems that your team actually uses. That compound in value over time. That become essential infrastructure rather than expensive experiments.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <div class="stat-value">100%</div>
+                                <div class="stat-label">Custom solutions</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Cookie-cutter templates</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">∞</div>
+                                <div class="stat-label">Attention to detail</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="founder-card reveal">
+                        <div class="founder-avatar">DF</div>
+                        <h3>Donovan Fitch</h3>
+                        <div class="founder-title">Founder & Principal Architect</div>
+                        <p>Donovan brings deep experience integrating LLM APIs into production systems, designing multi-step agentic workflows, and architecting scalable AI solutions that enhance operational efficiency.</p>
+                        <p style="margin-top: 16px;">His work spans custom AI integrations, internal copilot development, and end-to-end automation systems—always with an emphasis on real-world implementation over theoretical frameworks.</p>
+                        <div class="founder-expertise">
+                            <span class="expertise-tag">LLM APIs</span>
+                            <span class="expertise-tag">Agentic Workflows</span>
+                            <span class="expertise-tag">System Integration</span>
+                            <span class="expertise-tag">Production AI</span>
+                            <span class="expertise-tag">Scalable Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content reveal">
+                    <h2>Let's build something <span class="serif-italic">real</span></h2>
+                    <p>No sales pitch. No pressure. Just a conversation about what you're trying to accomplish and whether we can help.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
+                            Book Intro Call
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="page-services" class="page-section">
+        
+        <section class="hero" style="min-height: auto; padding-top: 180px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">Services</div>
+                    <h1>From <span class="gradient-text">presence</span> to <span class="gradient-text">performance</span></h1>
+                    <p class="hero-description">Two distinct offerings. One goal: helping you operate at a higher level with AI that works.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-detail">
+            <div class="container">
+                
+                <!-- Service 1: AI Website Generation -->
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>AI Website Generation</h3>
+                            <p>Your digital presence should establish credibility instantly. We use AI-accelerated development to build high-performance websites that convert—without the typical agency timeline or price tag.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>The Problem</h4>
+                            <p>You need a professional web presence but don't have months to wait or enterprise budgets to spend. DIY tools look generic. Traditional agencies move slowly. Your current site doesn't reflect the quality of your work.</p>
+                            
+                            <h4>Our Solution</h4>
+                            <p>We combine AI capabilities with human design sensibility to deliver polished, conversion-focused websites in days—not months. Every site is custom-designed to your brand, optimized for performance, and built to establish trust from the first interaction.</p>
+                            
+                            <h4>What You Get</h4>
+                            <ul>
+                                <li>Custom design aligned to your brand identity</li>
+                                <li>Conversion-optimized page structure and copy</li>
+                                <li>Fast-loading, mobile-responsive implementation</li>
+                                <li>SEO-ready architecture with proper metadata</li>
+                                <li>Analytics setup and tracking integration</li>
+                                <li>Rapid delivery—typically within 1-2 weeks</li>
+                            </ul>
+                            
+                            <h4>Best For</h4>
+                            <p>Startups launching new products, agencies needing client sites at scale, founders who want to look established, and companies rebranding or repositioning.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: AI Automation -->
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>AI Automation</h3>
+                            <p>Stop drowning in manual work. We build intelligent systems that automate repetitive tasks, connect your tools, and give your team leverage that compounds over time.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>The Problem</h4>
+                            <p>Your team spends hours on tasks that should be automated. Your tools don't talk to each other. You've tried ChatGPT but can't figure out how to make it useful for actual work. AI experiments keep stalling.</p>
+                            
+                            <h4>Our Solution</h4>
+                            <p>We design and implement custom automation systems tailored to your workflows. From simple Zapier-style automations to sophisticated multi-agent systems with LLM APIs—we match the solution to your actual needs, not theoretical possibilities.</p>
+                            
+                            <h4>What We Build</h4>
+                            <ul>
+                                <li>Workflow automation across sales, ops, and internal systems</li>
+                                <li>Custom AI integrations with CRMs, data tools, and internal apps</li>
+                                <li>Internal copilots and AI assistants trained on your knowledge</li>
+                                <li>GTM automation for lead routing, outreach, and follow-up</li>
+                                <li>Data pipeline automation for reporting and analysis</li>
+                                <li>Multi-step agentic workflows for complex processes</li>
+                            </ul>
+                            
+                            <h4>Best For</h4>
+                            <p>Operations teams drowning in manual work, sales orgs with fragmented tooling, companies with poor ROI from AI experiments, and technical teams who need implementation support.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content reveal">
+                    <h2>Not sure which you need?</h2>
+                    <p>Let's talk through your situation. Sometimes it's one, sometimes it's both, and sometimes we'll point you in a different direction entirely.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
+                            Book Discovery Call
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- PROCESS PAGE -->
+    <div id="page-process" class="page-section">
+        
+        <section class="hero" style="min-height: auto; padding-top: 180px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">How It Works</div>
+                    <h1>Structured for <span class="gradient-text">success</span></h1>
+                    <p class="hero-description">Every engagement follows a clear, proven process. No ambiguity. No scope creep. Just methodical progress toward your goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-detail">
+            <div class="container">
+                
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>1. Discover</h3>
+                            <p>We start by understanding your business—not just your request. What are you trying to accomplish? What's working? What's not? What tools do you use? Who needs to be involved?</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What Happens</h4>
+                            <ul>
+                                <li>Deep-dive conversation about your goals and constraints</li>
+                                <li>Workflow mapping and friction point identification</li>
+                                <li>Technical audit of existing tools and integrations</li>
+                                <li>Stakeholder alignment on success criteria</li>
+                            </ul>
+                            
+                            <h4>Why It Matters</h4>
+                            <p>Most AI projects fail because they solve the wrong problem. This phase ensures we're building toward meaningful outcomes—not just impressive technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>2. Design</h3>
+                            <p>With clarity on the problem, we architect a solution tailored to your context. This isn't a template—it's a custom blueprint designed for how your team actually works.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What Happens</h4>
+                            <ul>
+                                <li>Solution architecture and technical specification</li>
+                                <li>Integration mapping with existing systems</li>
+                                <li>User flow design and interface planning</li>
+                                <li>Risk assessment and mitigation planning</li>
+                            </ul>
+                            
+                            <h4>Why It Matters</h4>
+                            <p>Good design prevents expensive pivots later. We invest time upfront to ensure the solution will actually work in your environment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>3. Build</h3>
+                            <p>Development with precision. We build iteratively, sharing progress regularly so you're never surprised. Quality over speed—but we move efficiently.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What Happens</h4>
+                            <ul>
+                                <li>Iterative development with regular check-ins</li>
+                                <li>Testing at every stage—not just at the end</li>
+                                <li>Documentation as we go</li>
+                                <li>Flexibility to adjust based on learnings</li>
+                            </ul>
+                            
+                            <h4>Why It Matters</h4>
+                            <p>Transparency reduces risk. You'll always know where we are, what's working, and what's next.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>4. Deploy</h3>
+                            <p>Launch isn't the finish line—it's the starting point. We deploy with proper testing, monitoring, and documentation so your team can operate confidently from day one.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What Happens</h4>
+                            <ul>
+                                <li>Production deployment with rollback capability</li>
+                                <li>Team training and documentation handoff</li>
+                                <li>Monitoring setup and alerting configuration</li>
+                                <li>Staged rollout for high-stakes systems</li>
+                            </ul>
+                            
+                            <h4>Why It Matters</h4>
+                            <p>A system that works in testing but breaks in production is worthless. We ensure reliability from the start.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>5. Optimize</h3>
+                            <p>Real-world performance reveals what's actually working. We monitor, measure, and refine—turning good systems into great ones.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What Happens</h4>
+                            <ul>
+                                <li>Performance monitoring and analysis</li>
+                                <li>User feedback collection and synthesis</li>
+                                <li>Iterative improvements based on data</li>
+                                <li>Expansion planning for proven systems</li>
+                            </ul>
+                            
+                            <h4>Why It Matters</h4>
+                            <p>The best systems compound in value. Optimization ensures your investment keeps delivering returns.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content reveal">
+                    <h2>Ready to start?</h2>
+                    <p>The first step is always a conversation. No commitment required—just clarity on whether we can help.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
+                            Book Intro Call
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:lucentaiagency@gmail.com">lucentaiagency@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg style="height: 32px; width: 32px;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGrad2" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#f4c542"/>
+                                <stop offset="100%" stop-color="#e07a5f"/>
+                            </linearGradient>
+                        </defs>
+                        <g transform="translate(50,50)">
+                            <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad2)" transform="rotate(0)"/>
+                            <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad2)" transform="rotate(60)"/>
+                            <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad2)" transform="rotate(120)"/>
+                            <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad2)" transform="rotate(180)"/>
+                            <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad2)" transform="rotate(240)"/>
+                            <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad2)" transform="rotate(300)"/>
+                            <circle cx="0" cy="-42" r="3.5" fill="url(#logoGrad2)"/><circle cx="0" cy="-42" r="1.5" fill="#0a0a0b"/>
+                            <circle cx="36" cy="-21" r="3.5" fill="url(#logoGrad2)"/><circle cx="36" cy="-21" r="1.5" fill="#0a0a0b"/>
+                            <circle cx="36" cy="21" r="3.5" fill="url(#logoGrad2)"/><circle cx="36" cy="21" r="1.5" fill="#0a0a0b"/>
+                            <circle cx="0" cy="42" r="3.5" fill="url(#logoGrad2)"/><circle cx="0" cy="42" r="1.5" fill="#0a0a0b"/>
+                            <circle cx="-36" cy="21" r="3.5" fill="url(#logoGrad2)"/><circle cx="-36" cy="21" r="1.5" fill="#0a0a0b"/>
+                            <circle cx="-36" cy="-21" r="3.5" fill="url(#logoGrad2)"/><circle cx="-36" cy="-21" r="1.5" fill="#0a0a0b"/>
+                        </g>
+                    </svg>
+                    <span class="footer-text">© 2025 Lucent AI. All rights reserved.</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" onclick="showPage('home')">Home</a>
+                    <a href="#" onclick="showPage('about')">About</a>
+                    <a href="#" onclick="showPage('services')">Services</a>
+                    <a href="#" onclick="showPage('process')">Process</a>
+                    <a href="mailto:lucentaiagency@gmail.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById('page-' + pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Re-trigger reveal animations
+            setTimeout(() => {
+                checkReveal();
+            }, 100);
+        }
+
+        // Scroll Reveal Animation
+        function checkReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            
+            reveals.forEach(reveal => {
+                const revealTop = reveal.getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
