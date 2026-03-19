@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucent AI | Operational Enlightenment through AI</title>
-    <meta name="description" content="Lucent AI helps companies achieve operational enlightenment through intelligent automation and AI systems that actually work.">
+    <title>Lucent AI | AI Systems for Modern Businesses</title>
+    <meta name="description" content="Lucent designs and implements practical AI systems that automate workflows, capture leads, and streamline operations for small and mid-sized businesses.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -558,7 +558,7 @@
 
         .process-timeline {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 0;
             position: relative;
         }
@@ -613,6 +613,99 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.6;
+        }
+
+        /* Systems We Build Section */
+        .systems-we-build {
+            position: relative;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .system-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .system-card:hover {
+            border-color: rgba(244, 197, 66, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .system-card:hover::before {
+            opacity: 1;
+        }
+
+        .system-card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .system-card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--bg-primary);
+        }
+
+        .system-card h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .system-card ul {
+            list-style: none;
+        }
+
+        .system-card li {
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .system-card li:last-child {
+            border-bottom: none;
+        }
+
+        .system-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
         }
 
         /* About Section */
@@ -975,6 +1068,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .systems-grid {
+                grid-template-columns: 1fr;
+            }
+
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
@@ -1029,6 +1126,10 @@
             }
 
             .service-card {
+                padding: 32px;
+            }
+
+            .system-card {
                 padding: 32px;
             }
 
@@ -1106,16 +1207,13 @@
                             <stop offset="100%" stop-color="#e07a5f"/>
                         </linearGradient>
                     </defs>
-                    <!-- Pinwheel star shape -->
                     <g transform="translate(50,50)">
-                        <!-- 6 curved blades radiating from center -->
                         <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(0)"/>
                         <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(60)"/>
                         <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(120)"/>
                         <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(180)"/>
                         <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(240)"/>
                         <path d="M0,-8 Q12,-35 5,-45 Q-2,-38 -8,-15 Q-5,-8 0,-8" fill="url(#logoGrad1)" transform="rotate(300)"/>
-                        <!-- Connection dots at blade tips -->
                         <circle cx="0" cy="-42" r="3.5" fill="url(#logoGrad1)"/>
                         <circle cx="0" cy="-42" r="1.5" fill="#0a0a0b"/>
                         <circle cx="36" cy="-21" r="3.5" fill="url(#logoGrad1)" transform="rotate(0)"/>
@@ -1136,9 +1234,10 @@
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About</a></li>
                 <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('systems')">Systems We Build</a></li>
                 <li><a href="#" onclick="showPage('process')">Process</a></li>
             </ul>
-            <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="nav-cta">Book a Call</a>
+            <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="nav-cta">Book an AI Systems Call</a>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
@@ -1155,14 +1254,14 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-eyebrow">AI Automation Agency</div>
-                    <h1>Operational <span class="gradient-text">enlightenment</span> through AI</h1>
-                    <p class="hero-description">We illuminate inefficiencies, reveal hidden potential, and automate the systems holding your business back. Clarity first. Intelligent automation second.</p>
+                    <h1>AI Systems for <span class="gradient-text">Modern Businesses</span></h1>
+                    <p class="hero-description">Lucent designs and implements practical AI systems that automate workflows, capture leads, and streamline operations. We are the external AI systems partner for companies that want to move fast without hiring full-time engineers.</p>
                     <div class="hero-ctas">
                         <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
-                            Schedule Consultation
+                            Book an AI Systems Call
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
-                        <a href="#" onclick="showPage('services')" class="btn-secondary">Explore Services</a>
+                        <a href="#" onclick="showPage('systems')" class="btn-secondary">See Systems We Build</a>
                     </div>
                 </div>
             </div>
@@ -1177,30 +1276,30 @@
             <div class="container">
                 <div class="section-header reveal">
                     <div class="section-label">What We Do</div>
-                    <h2>AI systems that <span class="serif-italic">actually</span> work</h2>
-                    <p>Not another chatbot. Not a generic SaaS integration. We build intelligent systems tailored to how your business operates.</p>
+                    <h2>Your external AI <span class="serif-italic">systems partner</span></h2>
+                    <p>Most companies know AI can improve their operations but lack the technical expertise to implement it. We fill that gap—designing and building the systems, so your team can focus on running the business.</p>
                 </div>
                 <div class="what-we-do-grid">
                     <div class="what-card reveal">
                         <div class="what-card-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                         </div>
-                        <h3>Diagnose</h3>
-                        <p>We map your workflows, identify friction points, and find where AI can create the highest leverage. No assumptions—just clear analysis of what's slowing you down.</p>
+                        <h3>Discover Opportunities</h3>
+                        <p>We analyze your workflows and identify where automation creates the most leverage. No assumptions—just a clear read of where manual work is costing you time and money.</p>
                     </div>
                     <div class="what-card reveal">
                         <div class="what-card-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                         </div>
-                        <h3>Design</h3>
-                        <p>Every solution is architected around your specific context—your tools, your team, your goals. We design systems that integrate seamlessly, not bolt-ons that create more work.</p>
+                        <h3>Design the System</h3>
+                        <p>We architect the AI workflows and integrations needed to automate the process—built around your existing tools and how your team actually operates.</p>
                     </div>
                     <div class="what-card reveal">
                         <div class="what-card-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
                         </div>
-                        <h3>Deploy</h3>
-                        <p>Production-ready implementation with proper testing, monitoring, and documentation. You get systems that work reliably—not demos that break when conditions change.</p>
+                        <h3>Build, Integrate & Optimize</h3>
+                        <p>We implement the system, connect it to your existing tools, and deploy it into production. Then we monitor and refine so it continuously improves operations over time.</p>
                     </div>
                 </div>
             </div>
@@ -1211,32 +1310,87 @@
             <div class="container">
                 <div class="section-header reveal">
                     <div class="section-label">Services</div>
-                    <h2>Two ways we help you grow</h2>
-                    <p>Whether you need a high-converting web presence or intelligent automation behind the scenes, we deliver systems that compound over time.</p>
+                    <h2>Two core services, <span class="serif-italic">one clear goal</span></h2>
+                    <p>Whether you need an automated lead system or end-to-end workflow automation, we implement practical AI systems that improve how your business operates.</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card reveal">
                         <div class="service-number">01</div>
                         <h3>AI Website Generation</h3>
-                        <p>High-performance websites built with AI-accelerated development. Fast turnaround, conversion-optimized, and designed to establish credibility from the first visit.</p>
+                        <p>Websites built to function as automated lead systems—not just digital brochures. We integrate lead capture, CRM automation, AI chat qualification, and appointment booking directly into the site.</p>
                         <ul>
-                            <li>Landing pages & marketing sites</li>
-                            <li>Conversion-optimized design</li>
-                            <li>Rapid iteration & deployment</li>
-                            <li>SEO-ready architecture</li>
+                            <li>Lead capture & CRM integrated forms</li>
+                            <li>AI chat lead qualification</li>
+                            <li>Appointment booking automation</li>
+                            <li>Automated follow-up messaging</li>
                         </ul>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-number">02</div>
                         <h3>AI Automation</h3>
-                        <p>Intelligent systems that eliminate repetitive work, connect your tools, and give your team superpowers. From simple workflows to complex multi-agent systems.</p>
+                        <p>We help companies automate workflows across their internal tools. From lead response systems to client onboarding and reporting—we build the operational infrastructure that scales with your business.</p>
                         <ul>
-                            <li>Workflow automation</li>
-                            <li>Custom AI integrations</li>
-                            <li>Internal copilots & assistants</li>
-                            <li>Data pipeline automation</li>
+                            <li>Lead & sales workflow automation</li>
+                            <li>Client onboarding automation</li>
+                            <li>Document processing & reporting</li>
+                            <li>Cross-tool workflow orchestration</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Systems We Build (Homepage Section) -->
+        <section class="systems-we-build">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Systems We Build</div>
+                    <h2>What AI actually does <span class="serif-italic">inside your business</span></h2>
+                    <p>Concrete examples of the systems Lucent implements across lead generation, operations, and internal workflows.</p>
+                </div>
+                <div class="systems-grid">
+                    <div class="system-card reveal">
+                        <div class="system-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.94 3.36 2 2 0 0 1 3.9 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <h3>Lead Capture & Sales Systems</h3>
+                        <ul>
+                            <li>Instant lead response systems</li>
+                            <li>AI chat lead qualification</li>
+                            <li>CRM automation workflows</li>
+                            <li>Automated follow-up messaging</li>
+                            <li>Lead routing systems</li>
+                        </ul>
+                    </div>
+                    <div class="system-card reveal">
+                        <div class="system-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>Operational Workflow Automation</h3>
+                        <ul>
+                            <li>Client onboarding automation</li>
+                            <li>Document processing systems</li>
+                            <li>Internal workflow automation</li>
+                            <li>Reporting automation</li>
+                            <li>Cross-tool workflow orchestration</li>
+                        </ul>
+                    </div>
+                    <div class="system-card reveal">
+                        <div class="system-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </div>
+                        <h3>Internal AI Tools</h3>
+                        <ul>
+                            <li>Internal knowledge assistants</li>
+                            <li>AI copilots for support teams</li>
+                            <li>Document analysis tools</li>
+                            <li>Proposal generation systems</li>
+                            <li>AI-assisted reporting tools</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 48px;">
+                    <a href="#" onclick="showPage('systems')" class="btn-secondary">See Full Systems Library →</a>
                 </div>
             </div>
         </section>
@@ -1246,34 +1400,29 @@
             <div class="container">
                 <div class="section-header reveal">
                     <div class="section-label">Process</div>
-                    <h2>A clear path to results</h2>
-                    <p>No black boxes. No endless discovery phases. We move with intention through a proven process.</p>
+                    <h2>A clear path from <span class="serif-italic">idea to implementation</span></h2>
+                    <p>No ambiguity. No endless discovery phases. We move from workflow analysis to deployed system with a proven four-step process.</p>
                 </div>
                 <div class="process-timeline reveal">
                     <div class="process-step">
                         <div class="process-step-number">1</div>
-                        <h4>Discover</h4>
-                        <p>Deep-dive into your operations, tools, and goals</p>
+                        <h4>Discover Opportunities</h4>
+                        <p>We analyze your workflows and identify automation opportunities</p>
                     </div>
                     <div class="process-step">
                         <div class="process-step-number">2</div>
-                        <h4>Design</h4>
-                        <p>Architect solutions tailored to your context</p>
+                        <h4>Design the System</h4>
+                        <p>We design the AI workflows and integrations needed to automate the process</p>
                     </div>
                     <div class="process-step">
                         <div class="process-step-number">3</div>
-                        <h4>Build</h4>
-                        <p>Develop with precision and attention to detail</p>
+                        <h4>Build & Integrate</h4>
+                        <p>We implement the system and connect it to your existing tools</p>
                     </div>
                     <div class="process-step">
                         <div class="process-step-number">4</div>
-                        <h4>Deploy</h4>
-                        <p>Launch with proper testing and documentation</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-step-number">5</div>
-                        <h4>Optimize</h4>
-                        <p>Iterate based on real-world performance</p>
+                        <h4>Deploy & Optimize</h4>
+                        <p>We monitor and refine the system so it continuously improves operations</p>
                     </div>
                 </div>
             </div>
@@ -1283,11 +1432,11 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content reveal">
-                    <h2>Ready for <span class="serif-italic">clarity?</span></h2>
-                    <p>We work with a select number of clients to ensure every engagement gets the attention it deserves. Let's see if we're a fit.</p>
+                    <h2>Ready to automate <span class="serif-italic">your operations?</span></h2>
+                    <p>We work with a focused set of clients to make sure every system gets built right. Let's find out where AI can make the biggest difference in your business.</p>
                     <div class="cta-buttons">
                         <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
-                            Book Intro Call
+                            Book an AI Systems Call
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
                     </div>
@@ -1315,7 +1464,7 @@
                 <div class="hero-content">
                     <div class="hero-eyebrow">About Lucent AI</div>
                     <h1>Built on real-world <span class="gradient-text">implementation</span></h1>
-                    <p class="hero-description">Lucent was founded on a simple premise: AI should make businesses more effective, not more complicated. We bridge the gap between AI capability and operational reality.</p>
+                    <p class="hero-description">Lucent was founded on a simple premise: AI should make businesses more effective, not more complicated. We act as the external AI systems partner for companies that want to implement automation and AI without building an internal engineering team.</p>
                 </div>
             </div>
         </section>
@@ -1325,13 +1474,13 @@
                 <div class="about-grid">
                     <div class="about-content reveal">
                         <h2>The philosophy</h2>
-                        <p>Most AI implementations fail not because the technology doesn't work—but because it wasn't designed for the reality of how businesses operate. Teams get excited about AI's potential, invest in tools and experiments, then watch them gather dust.</p>
-                        <p>We take a different approach. Before writing a single line of code, we understand your workflows, constraints, and goals. Then we design solutions that fit your context—not generic templates that require you to change how you work.</p>
-                        <p>The result: AI systems that your team actually uses. That compound in value over time. That become essential infrastructure rather than expensive experiments.</p>
+                        <p>Most companies know AI can improve their operations. The problem isn't awareness—it's implementation. Building practical AI systems requires technical expertise that most businesses don't have in-house, and can't justify hiring for full-time.</p>
+                        <p>Lucent fills that gap. We function as a fractional AI engineer and automation architect—designing and implementing the systems that automate your workflows, capture leads, and reduce operational overhead.</p>
+                        <p>The result: AI that actually runs in your business. Systems your team uses every day. Infrastructure that compounds in value as your operations grow.</p>
                         <div class="about-stats">
                             <div class="stat">
                                 <div class="stat-value">100%</div>
-                                <div class="stat-label">Custom solutions</div>
+                                <div class="stat-label">Custom-built systems</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">0</div>
@@ -1339,22 +1488,22 @@
                             </div>
                             <div class="stat">
                                 <div class="stat-value">∞</div>
-                                <div class="stat-label">Attention to detail</div>
+                                <div class="stat-label">Attention to implementation</div>
                             </div>
                         </div>
                     </div>
                     <div class="founder-card reveal">
                         <div class="founder-avatar">DF</div>
                         <h3>Donovan Fitch</h3>
-                        <div class="founder-title">Founder & Principal Architect</div>
-                        <p>Donovan brings deep experience integrating LLM APIs into production systems, designing multi-step agentic workflows, and architecting scalable AI solutions that enhance operational efficiency.</p>
-                        <p style="margin-top: 16px;">His work spans custom AI integrations, internal copilot development, and end-to-end automation systems—always with an emphasis on real-world implementation over theoretical frameworks.</p>
+                        <div class="founder-title">Founder & Principal AI Systems Architect</div>
+                        <p>Donovan brings deep experience integrating LLM APIs into production systems, designing multi-step agentic workflows, and architecting scalable AI automation that enhances operational efficiency.</p>
+                        <p style="margin-top: 16px;">His work spans lead automation systems, internal copilot development, CRM integrations, and end-to-end workflow automation—always with an emphasis on practical implementation over theoretical frameworks.</p>
                         <div class="founder-expertise">
                             <span class="expertise-tag">LLM APIs</span>
-                            <span class="expertise-tag">Agentic Workflows</span>
+                            <span class="expertise-tag">Workflow Automation</span>
                             <span class="expertise-tag">System Integration</span>
-                            <span class="expertise-tag">Production AI</span>
-                            <span class="expertise-tag">Scalable Architecture</span>
+                            <span class="expertise-tag">CRM Automation</span>
+                            <span class="expertise-tag">Agentic Systems</span>
                         </div>
                     </div>
                 </div>
@@ -1365,11 +1514,11 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content reveal">
-                    <h2>Let's build something <span class="serif-italic">real</span></h2>
-                    <p>No sales pitch. No pressure. Just a conversation about what you're trying to accomplish and whether we can help.</p>
+                    <h2>Let's build something <span class="serif-italic">that works</span></h2>
+                    <p>No sales pitch. Just a direct conversation about what you're trying to automate and whether Lucent is the right partner to build it.</p>
                     <div class="cta-buttons">
                         <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
-                            Book Intro Call
+                            Book an AI Systems Call
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
                     </div>
@@ -1386,8 +1535,8 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-eyebrow">Services</div>
-                    <h1>From <span class="gradient-text">presence</span> to <span class="gradient-text">performance</span></h1>
-                    <p class="hero-description">Two distinct offerings. One goal: helping you operate at a higher level with AI that works.</p>
+                    <h1>From <span class="gradient-text">lead capture</span> to <span class="gradient-text">full automation</span></h1>
+                    <p class="hero-description">Two focused services. One goal: practical AI systems that improve how your business operates every day.</p>
                 </div>
             </div>
         </section>
@@ -1400,27 +1549,27 @@
                     <div class="service-detail-grid">
                         <div class="service-detail-header">
                             <h3>AI Website Generation</h3>
-                            <p>Your digital presence should establish credibility instantly. We use AI-accelerated development to build high-performance websites that convert—without the typical agency timeline or price tag.</p>
+                            <p>These aren't brochure websites. We build websites designed to function as automated lead systems—capturing, qualifying, and routing prospects without manual effort from your team.</p>
                         </div>
                         <div class="service-detail-content">
                             <h4>The Problem</h4>
-                            <p>You need a professional web presence but don't have months to wait or enterprise budgets to spend. DIY tools look generic. Traditional agencies move slowly. Your current site doesn't reflect the quality of your work.</p>
+                            <p>Most business websites collect leads and drop them. Forms go unread. Follow-up is inconsistent. New contacts sit in a spreadsheet instead of an active pipeline. Your front door isn't working hard enough.</p>
                             
                             <h4>Our Solution</h4>
-                            <p>We combine AI capabilities with human design sensibility to deliver polished, conversion-focused websites in days—not months. Every site is custom-designed to your brand, optimized for performance, and built to establish trust from the first interaction.</p>
+                            <p>We build websites with automated lead systems built in—CRM integrations, AI chat qualification, appointment booking, and automated follow-up messaging wired together from day one. The site becomes the front door to your entire automated intake process.</p>
                             
                             <h4>What You Get</h4>
                             <ul>
-                                <li>Custom design aligned to your brand identity</li>
-                                <li>Conversion-optimized page structure and copy</li>
-                                <li>Fast-loading, mobile-responsive implementation</li>
-                                <li>SEO-ready architecture with proper metadata</li>
-                                <li>Analytics setup and tracking integration</li>
-                                <li>Rapid delivery—typically within 1-2 weeks</li>
+                                <li>Lead capture forms with direct CRM integration</li>
+                                <li>AI chat for 24/7 lead qualification</li>
+                                <li>Appointment booking automation</li>
+                                <li>Automated follow-up messaging sequences</li>
+                                <li>Lead routing to the right person or pipeline stage</li>
+                                <li>Fast delivery—typically within 1–2 weeks</li>
                             </ul>
                             
                             <h4>Best For</h4>
-                            <p>Startups launching new products, agencies needing client sites at scale, founders who want to look established, and companies rebranding or repositioning.</p>
+                            <p>Service businesses, real estate investors, consulting firms, agencies, and startups that need a professional site with automated lead intake rather than a static web presence.</p>
                         </div>
                     </div>
                 </div>
@@ -1430,27 +1579,27 @@
                     <div class="service-detail-grid">
                         <div class="service-detail-header">
                             <h3>AI Automation</h3>
-                            <p>Stop drowning in manual work. We build intelligent systems that automate repetitive tasks, connect your tools, and give your team leverage that compounds over time.</p>
+                            <p>This is the long-term service. We help companies automate workflows across their internal tools—from lead response and sales pipelines to client onboarding, document processing, and operational reporting.</p>
                         </div>
                         <div class="service-detail-content">
                             <h4>The Problem</h4>
-                            <p>Your team spends hours on tasks that should be automated. Your tools don't talk to each other. You've tried ChatGPT but can't figure out how to make it useful for actual work. AI experiments keep stalling.</p>
+                            <p>Your team spends hours each week on work that should be automated. Your tools don't connect to each other. You know AI could help but don't have the internal expertise to implement it. Experiments stall. Nothing ships.</p>
                             
                             <h4>Our Solution</h4>
-                            <p>We design and implement custom automation systems tailored to your workflows. From simple Zapier-style automations to sophisticated multi-agent systems with LLM APIs—we match the solution to your actual needs, not theoretical possibilities.</p>
+                            <p>We design and implement automation systems tailored to your actual workflows. We connect your existing tools, build the logic, and deploy systems that run without manual intervention—so your team can focus on higher-value work.</p>
                             
                             <h4>What We Build</h4>
                             <ul>
-                                <li>Workflow automation across sales, ops, and internal systems</li>
-                                <li>Custom AI integrations with CRMs, data tools, and internal apps</li>
-                                <li>Internal copilots and AI assistants trained on your knowledge</li>
-                                <li>GTM automation for lead routing, outreach, and follow-up</li>
-                                <li>Data pipeline automation for reporting and analysis</li>
-                                <li>Multi-step agentic workflows for complex processes</li>
+                                <li>Instant lead response and SMS follow-up automation</li>
+                                <li>CRM pipeline automation and lead routing</li>
+                                <li>Client onboarding and intake workflow automation</li>
+                                <li>Document processing and analysis systems</li>
+                                <li>Internal reporting and data pipeline automation</li>
+                                <li>Cross-tool workflow orchestration</li>
                             </ul>
                             
                             <h4>Best For</h4>
-                            <p>Operations teams drowning in manual work, sales orgs with fragmented tooling, companies with poor ROI from AI experiments, and technical teams who need implementation support.</p>
+                            <p>Service businesses, agencies, SaaS companies, real estate operations, and consulting firms that want to reduce operational overhead and run more efficiently without adding headcount.</p>
                         </div>
                     </div>
                 </div>
@@ -1462,13 +1611,138 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content reveal">
-                    <h2>Not sure which you need?</h2>
-                    <p>Let's talk through your situation. Sometimes it's one, sometimes it's both, and sometimes we'll point you in a different direction entirely.</p>
+                    <h2>Not sure where to start?</h2>
+                    <p>Most clients begin with a single system. We'll help you identify the highest-leverage automation opportunity in your business and build from there.</p>
                     <div class="cta-buttons">
                         <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
-                            Book Discovery Call
+                            Schedule an Automation Consultation
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SYSTEMS WE BUILD PAGE -->
+    <div id="page-systems" class="page-section">
+        
+        <section class="hero" style="min-height: auto; padding-top: 180px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">Systems We Build</div>
+                    <h1>Concrete AI systems for <span class="gradient-text">real operations</span></h1>
+                    <p class="hero-description">These are the systems Lucent designs, builds, and deploys inside businesses like yours. Not theoretical use cases—actual implementations that run every day.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-detail">
+            <div class="container">
+
+                <!-- Lead Automation Systems -->
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>Lead Automation Systems</h3>
+                            <p>Automated systems that capture, qualify, and route leads without manual intervention—so your pipeline stays active even when your team isn't at their desk.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What These Systems Do</h4>
+                            <p>Lead automation connects your lead sources—website forms, ad platforms, referral networks—to a set of automated actions that respond instantly, qualify the prospect, and move them into the right stage of your pipeline.</p>
+
+                            <h4>Systems We Implement</h4>
+                            <ul>
+                                <li>Instant lead response systems that contact new leads within seconds of submission</li>
+                                <li>AI chat qualification that asks the right questions and scores leads before human review</li>
+                                <li>CRM pipeline automation that creates, updates, and moves records based on lead behavior</li>
+                                <li>SMS and email follow-up sequences triggered automatically by lead status</li>
+                                <li>Lead routing that assigns prospects to the right rep, location, or team based on defined criteria</li>
+                                <li>Appointment booking automation embedded directly in your intake flow</li>
+                            </ul>
+
+                            <h4>Who This Is For</h4>
+                            <p>Service businesses, real estate investors, agencies, and any company where a slow response to a new lead costs them the deal. If leads are going cold because follow-up is inconsistent, this is the system to build first.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operational Automation -->
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>Operational Automation</h3>
+                            <p>Workflow automation that eliminates manual overhead across client onboarding, document processing, internal operations, and reporting.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What These Systems Do</h4>
+                            <p>Operational automation replaces the manual work that keeps your team from doing higher-value tasks. We identify the repetitive workflows inside your business and build systems that execute them automatically—connected to the tools you already use.</p>
+
+                            <h4>Systems We Implement</h4>
+                            <ul>
+                                <li>Client onboarding automation that handles intake forms, document collection, and account setup</li>
+                                <li>Document processing systems that extract, analyze, and route information from contracts, invoices, and reports</li>
+                                <li>Internal workflow automation that connects your CRM, project management, and communication tools</li>
+                                <li>Reporting automation that pulls data from multiple sources and delivers structured summaries on a schedule</li>
+                                <li>Cross-tool workflow orchestration that keeps your stack synchronized without manual data entry</li>
+                                <li>Customer experience workflows including support intake, follow-up sequences, and satisfaction tracking</li>
+                            </ul>
+
+                            <h4>Who This Is For</h4>
+                            <p>Consulting firms, SaaS companies, agencies, and operations teams that are scaling but not yet ready to hire. If your team is doing the same tasks manually each week, those tasks should be automated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internal AI Assistants -->
+                <div class="service-detail-block reveal">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-header">
+                            <h3>Internal AI Assistants</h3>
+                            <p>AI tools built specifically for your team—trained on your knowledge base, integrated into your workflows, and designed to make your people faster at the work they already do.</p>
+                        </div>
+                        <div class="service-detail-content">
+                            <h4>What These Systems Do</h4>
+                            <p>Internal AI tools give your team leverage on knowledge-intensive tasks—answering questions from your documentation, drafting proposals from templates, analyzing documents, and surfacing the right information at the right time.</p>
+
+                            <h4>Systems We Implement</h4>
+                            <ul>
+                                <li>Internal knowledge assistants that answer team questions from your SOPs, docs, and past work</li>
+                                <li>AI copilots for support teams that surface relevant answers and draft responses</li>
+                                <li>Document analysis tools that extract key information from contracts, reports, and briefs</li>
+                                <li>Proposal and content generation systems trained on your past deliverables and brand voice</li>
+                                <li>AI-assisted reporting tools that turn raw data into structured summaries and recommendations</li>
+                                <li>Custom task automation assistants for specific repetitive knowledge work</li>
+                            </ul>
+
+                            <h4>Who This Is For</h4>
+                            <p>Teams with a lot of institutional knowledge that isn't easily accessible—consulting firms, agencies, customer support teams, and operations groups that spend time answering the same questions or producing the same types of documents repeatedly.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content reveal">
+                    <h2>See one of these systems <span class="serif-italic">in your business</span></h2>
+                    <p>Book a call and we'll walk through which system would make the biggest operational difference for you—and what it would take to build it.</p>
+                    <div class="cta-buttons">
+                        <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
+                            Book an AI Systems Call
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#" onclick="showPage('services')" class="btn-secondary">View Our Services</a>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:lucentaiagency@gmail.com">lucentaiagency@gmail.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1483,8 +1757,8 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-eyebrow">How It Works</div>
-                    <h1>Structured for <span class="gradient-text">success</span></h1>
-                    <p class="hero-description">Every engagement follows a clear, proven process. No ambiguity. No scope creep. Just methodical progress toward your goals.</p>
+                    <h1>From workflow analysis to <span class="gradient-text">deployed system</span></h1>
+                    <p class="hero-description">Every engagement follows a clear, proven process. We move from discovery to implementation with intention—no ambiguity, no scope creep, just steady progress toward a working system.</p>
                 </div>
             </div>
         </section>
@@ -1495,20 +1769,20 @@
                 <div class="service-detail-block reveal">
                     <div class="service-detail-grid">
                         <div class="service-detail-header">
-                            <h3>1. Discover</h3>
-                            <p>We start by understanding your business—not just your request. What are you trying to accomplish? What's working? What's not? What tools do you use? Who needs to be involved?</p>
+                            <h3>1. Discover Opportunities</h3>
+                            <p>We analyze your workflows and identify where automation creates real leverage. Not every process should be automated—we find the ones where building a system will have the greatest operational impact.</p>
                         </div>
                         <div class="service-detail-content">
                             <h4>What Happens</h4>
                             <ul>
-                                <li>Deep-dive conversation about your goals and constraints</li>
-                                <li>Workflow mapping and friction point identification</li>
-                                <li>Technical audit of existing tools and integrations</li>
-                                <li>Stakeholder alignment on success criteria</li>
+                                <li>Deep-dive into your current workflows and tools</li>
+                                <li>Identification of manual tasks that are strong automation candidates</li>
+                                <li>Technical audit of existing integrations and data flows</li>
+                                <li>Prioritization of automation opportunities by impact and buildability</li>
                             </ul>
                             
                             <h4>Why It Matters</h4>
-                            <p>Most AI projects fail because they solve the wrong problem. This phase ensures we're building toward meaningful outcomes—not just impressive technology.</p>
+                            <p>The highest-ROI automation is rarely the most obvious one. This phase ensures we're building toward the problems that actually cost you time and money—not just the ones that seem technical.</p>
                         </div>
                     </div>
                 </div>
@@ -1516,20 +1790,20 @@
                 <div class="service-detail-block reveal">
                     <div class="service-detail-grid">
                         <div class="service-detail-header">
-                            <h3>2. Design</h3>
-                            <p>With clarity on the problem, we architect a solution tailored to your context. This isn't a template—it's a custom blueprint designed for how your team actually works.</p>
+                            <h3>2. Design the System</h3>
+                            <p>We design the AI workflows and integrations needed to automate the process. This is the blueprint—built around your existing tools, team structure, and how the work actually flows through your business.</p>
                         </div>
                         <div class="service-detail-content">
                             <h4>What Happens</h4>
                             <ul>
-                                <li>Solution architecture and technical specification</li>
-                                <li>Integration mapping with existing systems</li>
-                                <li>User flow design and interface planning</li>
-                                <li>Risk assessment and mitigation planning</li>
+                                <li>System architecture and workflow design</li>
+                                <li>Integration mapping with your existing tools and data sources</li>
+                                <li>Definition of triggers, logic, and automation rules</li>
+                                <li>Identification of edge cases and exception handling</li>
                             </ul>
                             
                             <h4>Why It Matters</h4>
-                            <p>Good design prevents expensive pivots later. We invest time upfront to ensure the solution will actually work in your environment.</p>
+                            <p>A well-designed system is easier to build, easier to debug, and easier to extend. Time spent designing upfront prevents expensive rework once implementation begins.</p>
                         </div>
                     </div>
                 </div>
@@ -1537,20 +1811,20 @@
                 <div class="service-detail-block reveal">
                     <div class="service-detail-grid">
                         <div class="service-detail-header">
-                            <h3>3. Build</h3>
-                            <p>Development with precision. We build iteratively, sharing progress regularly so you're never surprised. Quality over speed—but we move efficiently.</p>
+                            <h3>3. Build & Integrate</h3>
+                            <p>We implement the system and connect it to your existing tools. Development is iterative—you see progress regularly and can give feedback before the system reaches production.</p>
                         </div>
                         <div class="service-detail-content">
                             <h4>What Happens</h4>
                             <ul>
                                 <li>Iterative development with regular check-ins</li>
-                                <li>Testing at every stage—not just at the end</li>
-                                <li>Documentation as we go</li>
-                                <li>Flexibility to adjust based on learnings</li>
+                                <li>Integration with your CRM, communication tools, and internal systems</li>
+                                <li>Testing at each stage with real data and workflows</li>
+                                <li>Documentation of system logic, triggers, and configuration</li>
                             </ul>
                             
                             <h4>Why It Matters</h4>
-                            <p>Transparency reduces risk. You'll always know where we are, what's working, and what's next.</p>
+                            <p>You stay informed throughout the build. No surprises at delivery. Feedback during development means the system fits how your team actually works by the time it launches.</p>
                         </div>
                     </div>
                 </div>
@@ -1558,41 +1832,20 @@
                 <div class="service-detail-block reveal">
                     <div class="service-detail-grid">
                         <div class="service-detail-header">
-                            <h3>4. Deploy</h3>
-                            <p>Launch isn't the finish line—it's the starting point. We deploy with proper testing, monitoring, and documentation so your team can operate confidently from day one.</p>
+                            <h3>4. Deploy & Optimize</h3>
+                            <p>We deploy the system into production and then monitor and refine it based on real-world performance. A deployed system is the starting point—optimization is how it compounds in value over time.</p>
                         </div>
                         <div class="service-detail-content">
                             <h4>What Happens</h4>
                             <ul>
-                                <li>Production deployment with rollback capability</li>
+                                <li>Production deployment with monitoring and alerting in place</li>
                                 <li>Team training and documentation handoff</li>
-                                <li>Monitoring setup and alerting configuration</li>
-                                <li>Staged rollout for high-stakes systems</li>
+                                <li>Performance tracking against defined operational outcomes</li>
+                                <li>Iterative refinement based on real usage and results</li>
                             </ul>
                             
                             <h4>Why It Matters</h4>
-                            <p>A system that works in testing but breaks in production is worthless. We ensure reliability from the start.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-detail-block reveal">
-                    <div class="service-detail-grid">
-                        <div class="service-detail-header">
-                            <h3>5. Optimize</h3>
-                            <p>Real-world performance reveals what's actually working. We monitor, measure, and refine—turning good systems into great ones.</p>
-                        </div>
-                        <div class="service-detail-content">
-                            <h4>What Happens</h4>
-                            <ul>
-                                <li>Performance monitoring and analysis</li>
-                                <li>User feedback collection and synthesis</li>
-                                <li>Iterative improvements based on data</li>
-                                <li>Expansion planning for proven systems</li>
-                            </ul>
-                            
-                            <h4>Why It Matters</h4>
-                            <p>The best systems compound in value. Optimization ensures your investment keeps delivering returns.</p>
+                            <p>Systems improve with use. Real-world data reveals what's working and what needs adjustment. Optimization turns a good automation into one that becomes essential infrastructure for your operations.</p>
                         </div>
                     </div>
                 </div>
@@ -1604,11 +1857,11 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content reveal">
-                    <h2>Ready to start?</h2>
-                    <p>The first step is always a conversation. No commitment required—just clarity on whether we can help.</p>
+                    <h2>Ready to get started?</h2>
+                    <p>The first step is a 30-minute conversation. We'll identify the right automation to build first and give you a clear picture of what implementation looks like.</p>
                     <div class="cta-buttons">
                         <a href="https://calendly.com/lucentaiagency/lucent-ai-agency-intro-call" target="_blank" class="btn-primary">
-                            Book Intro Call
+                            Book an AI Systems Call
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
                     </div>
@@ -1657,6 +1910,7 @@
                     <a href="#" onclick="showPage('home')">Home</a>
                     <a href="#" onclick="showPage('about')">About</a>
                     <a href="#" onclick="showPage('services')">Services</a>
+                    <a href="#" onclick="showPage('systems')">Systems We Build</a>
                     <a href="#" onclick="showPage('process')">Process</a>
                     <a href="mailto:lucentaiagency@gmail.com">Contact</a>
                 </div>
@@ -1667,18 +1921,14 @@
     <script>
         // Page Navigation
         function showPage(pageId) {
-            // Hide all pages
             document.querySelectorAll('.page-section').forEach(page => {
                 page.classList.remove('active');
             });
             
-            // Show selected page
             document.getElementById('page-' + pageId).classList.add('active');
             
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
-            // Re-trigger reveal animations
             setTimeout(() => {
                 checkReveal();
             }, 100);
